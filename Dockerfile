@@ -9,5 +9,6 @@ RUN apt update && apt -y upgrade && apt -y install git python-pip software-prope
 # install ansible > 2.1 to get the debugguer 
 #RUN apt-add-repository -y ppa:ansible/ansible && apt update && apt -y upgrade && apt -y install ansible
 #RUN pip install --upgrade pip && pip install -i https://testpypi.python.org/pypi fortiosapi
-RUN pip install --upgrade pip && pip install fortiosapi
+RUN python -m pip install --upgrade --force-reinstall pip && pip install fortiosapi pyfmg
+USER ubuntu
 CMD ["/usr/bin/bash"]
